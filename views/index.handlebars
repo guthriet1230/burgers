@@ -1,22 +1,47 @@
+<div id="big-container">
 <div class="container">
     <h1 id="page-title">Burgers for the Soul</h1>
 
-<div class="row">
+    <div class="row">
 
-<div class="col-4">
-  <h2>Get Ready</h2>
+        <div class="col-4">
+            <h2>Get Ready</h2>
 
-</div>
+            <form class="create-form">
+
+                <div class="form-group">
+                    <label for="burger">Burger Name:</label><br>
+                    <input type="text" name="name" id="input-burger">
+                </div>
+
+                <button type="submit">Add Burger</button>
+            </form>
+
+        </div>
+
+        <div class="col-4">
+            <h2>Get Set</h2>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{else}}
+                <li>{{burger_name}} <button id="devour"  data-id={{id}}>Devour</button></li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
 
 
-<div class="col-4">
-  <h2>Get Set</h2>
-</div>
 
+        <div class="col-4">
+            <h2>Devoured</h2>
 
+            {{#each burgers}}
+            {{#if devoured}}
+            <li>{{burger_name}}</li>
+            {{/if}}
+            {{/each}}
 
-<div class="col-4">
-  <h2>Go</h2>
-</div>
+        </div>
 
-</div>
+    </div></div>

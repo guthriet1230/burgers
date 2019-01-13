@@ -8,10 +8,41 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/public/assets/css/style.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
     {{{body}}}
 </body>
+<script>
+    $(".create-form").on("submit", function (event) {
+    event.preventDefault();
+    let burgerInput = {
+        name: $("#input-burger").val().trim()
+    };
+    // Send the POST request.
+    $.ajax("/api/burgers", {
+        type: "POST",
+        data: burgerInput
+    }).then(
+        function () {
+            console.log("Yummy");
+            location.reload();
+        }
+    );
+});
+
+$(document).on("click", "#devour", function (event) {
+    event.preventDefault();
+  
+    let newId = $(this).attr("data-id");
+   // Send the PUT request.
+    $.ajax("/api/burgers/" + newId, {
+        type: "PUT",
+        data: {devoured: 1}
+      }).then(function() {location.reload();});
+})
+</script>
 </html>

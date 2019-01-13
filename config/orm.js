@@ -11,26 +11,25 @@ const orm = {
     var queryString = "SELECT * FROM " + input;
     connection.query(queryString, function(err, res) {
       if (err) throw err;
-    //   console.log(res);
+      //   console.log(res);
       cb(res);
     });
   },
 
   insert: function(table, input, cb) {
-    var queryString = "INSERT INTO " + table + burger_name + " VALUE " + input;
+    let queryString = `INSERT INTO ${table} (burger_name) VALUE ('${input}')`;
     connection.query(queryString, function(err, res) {
       if (err) throw err;
-    //   console.log(res);
+      //   console.log(res);
       cb(res);
     });
   },
 
   update: function(table, id, val, cb) {
-    var queryString =
-      "UPDATE " + table + " SET devoured = " + val + " WHERE " + id;
+    var queryString = `UPDATE ${table} SET devoured = ${val} WHERE ${id}`;
     connection.query(queryString, function(err, res) {
       if (err) throw err;
-    //   console.log(res);
+      //   console.log(res);
       cb(res);
     });
   }
