@@ -4,14 +4,16 @@ Hungry? Type a burger into the input field and our chef will add it to the datab
 App
 -----
 
+
 Technology Used
 -----
 - HTML/CSS/Javascript
-- Node.js
-- Express.js
-- Handlebars
-- MySQL Database
+- Node.js: Logic & Backend Script
+- Express.js: Server & Routing
+- Handlebars: Views
+- MySQL: Database
 - ORM & MVC conventions
+- Heroku: Deployment
 
 Known Issues
 -----
