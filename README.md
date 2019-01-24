@@ -1,4 +1,4 @@
-# burgers
+# Burgers
 Hungry? Type a burger into the input field and our chef will add it to the database. Once ready, you'll be able to devour the burger and our database will update to confirm that you were able to experience your yummy burger selection. 
 
 App
