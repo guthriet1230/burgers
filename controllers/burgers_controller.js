@@ -20,14 +20,15 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+  let id = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  // console.log("condition", condition);
   burger.update(
-    req.body.devoured, condition, function(res) {
-    if (res.changedRows == 0) {
+    req.body.devoured, id, function(res) {
+    if (res.changedRows === 0) {
       return res.status(404).end();
-    } else {
+    } 
+    else {
       res.status(200).end();
     }
   });

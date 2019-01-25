@@ -26,7 +26,7 @@ const orm = {
   },
 
   update: function(table, id, val, cb) {
-    var queryString = `UPDATE ${table} SET devoured = ${val} WHERE ${id}`;
+    var queryString = `UPDATE ${table} SET devoured = ${val} WHERE ${id}`
     connection.query(queryString, function(err, res) {
       if (err) throw err;
       //   console.log(res);
