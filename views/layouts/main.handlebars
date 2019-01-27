@@ -44,7 +44,12 @@ $(document).on("click", "#devour", function (event) {
     $.ajax("/api/burgers/" + newId, {
         type: "PUT",
         data: {devoured: 1}
-      }).then(function() {location.reload();});
+      })
+          location.reload();
 })
+
+// need to target the front end and have the burger put into that column 
+
+
 </script>
 </html>
